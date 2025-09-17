@@ -1,14 +1,22 @@
+import { obtenerProductos , guardarProductos} from "./control/miLocalStorange.js";
 import { header } from "./componentes/header/headerComponent.js";
+import { formularioCompras } from "./componentes/formulario/formularioComponent.js";
 
-function seccion(){
+function seccion() {
+    // Obtener productos del localStorage
+    let productosGuardados = obtenerProductos();
 
-    let seccion = document.createElement('section');
+    if (!productosGuardados || productosGuardados.length === 0) {
+        productosGuardados = [];
+        guardarProductos(productosGuardados);
+    }
 
+    console.log("Productos cargados:", productosGuardados);
 
-    //Header 
-    seccion.appendChild(header());
-
-    return seccion;
+    // Renderizar componentes
+    document.body.appendChild(header());
+    document.body.appendChild(formularioCompras());
 }
+
 
 document.body.appendChild(seccion());

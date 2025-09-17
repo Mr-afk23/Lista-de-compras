@@ -1,9 +1,12 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    margin: auto;
 }
 
 html {
-    font-size: 10px;
+    max-width: 100%;
+    margin:  auto;
+    font-family: monospace;
 }
