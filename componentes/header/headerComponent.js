@@ -1,22 +1,24 @@
-function header () {
+import { descargarSeccion } from "../../control/descargar.js"; 
 
-let header = document.createElement('header');
-header.className = "header";
+function Header() {
+    let header = document.createElement('header');
+    header.className = "header";
 
-let titulo = document.createElement('h2');
-header.appendChild(titulo);
-titulo.innerText = "Lista de compras"
-titulo.className = "titulo1"
+    let titulo = document.createElement('h2');
+    titulo.innerText = "Lista de compras";
+    titulo.className = "titulo1";
+    header.appendChild(titulo);
 
+    let descarga = document.createElement('a');
+    descarga.innerText = "⬇️";
+    descarga.className = "descarga";
+    header.appendChild(descarga);
 
-let descarga = document.createElement('a');
-header.appendChild(descarga);
-descarga.innerText = "⬇️";
-titulo.className = "descarga"
+    descarga.addEventListener('click', () => {
+        descargarSeccion('.todo'); // captura la sección principal
+    });
 
-
-return header;
-
+    return header;
 }
 
-export{header}
+export { Header };
