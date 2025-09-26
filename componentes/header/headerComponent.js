@@ -1,8 +1,8 @@
-import { descargarSeccion } from "../../control/descargar.js"; 
+import { descargarSeccion } from "../../control/descargar.js";
 
 function Header() {
     let header = document.createElement('header');
-    header.className = "header";
+    header.className = "header no-captura"; // 👈 todo el header se ignora en la captura
 
     let titulo = document.createElement('h2');
     titulo.innerText = "Lista de compras";
